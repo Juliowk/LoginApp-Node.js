@@ -58,6 +58,13 @@ body * {
      margin: 0;
 }
 
+.card-login>a {
+     color: #00ff80;
+     font-weight: 700;
+     text-decoration: none;
+     margin: 0;
+}
+
 .textfield {
      display: flex;
      flex-direction: column;
@@ -89,6 +96,17 @@ body * {
      color: #f0ffff94;
 }
 
+.textfield > .successInput {
+     background: #00ff80;
+     text-align: center;
+     color: #2b134b;
+     text-transform: uppercase;
+     font-weight: 800;
+     letter-spacing: 3px;
+     font-size: 14px;
+     margin-top: 20px;
+}
+
 .btn-login {
      width: 100%;
      padding: 16px 0px;
@@ -103,15 +121,6 @@ body * {
      background-color: #00ff88;
      cursor: pointer;
      box-shadow: 0px 10px 40px -12px #00ff8052;
-}
-
-.footer {
-     margin: 20px 0px;
-     /* display: none; */
-}
-
-.footer > p {
-     color: #00ff88;
 }
 
 @media only screen and (max-width: 950px) {
@@ -135,7 +144,7 @@ body * {
           height: auto;
      }
 
-     .left-login > img {
+     .left-login>img {
           width: 50vw;
           margin-bottom: 30px;
      }

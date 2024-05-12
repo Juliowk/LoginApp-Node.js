@@ -1,0 +1,41 @@
+<form class="rigth-login" action="/operations/register" method="post">
+  <div class="card-login">
+    <h1>Cadastro</h1>
+
+    {{#each erros}}
+      <div class="textfield">
+        <div class="alert alert-danger w-100 font-weight-bold mb-0">{{texto}}</div>
+      </div>
+
+    {{/each}}
+
+    <div class="textfield">
+      <label for="user">Usuário</label>
+      <input type="text" name="user" id="user" placeholder="Usuário" />
+    </div>
+
+    <div class="textfield">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="seuemail@gmail.com"
+      />
+    </div>
+
+    <div class="textfield">
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Senha"
+      />
+    </div>
+
+    <button type="submit" class="btn-login">Cadastrar</button>
+
+    <a href="/"><p>Já possui registro? Faça Login!</p></a>
+  </div>
+</form>

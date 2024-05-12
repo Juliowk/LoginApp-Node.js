@@ -1,0 +1,19 @@
+{{#if success_msg}}
+
+  <div class="textfield">
+    <input
+      class="successInput"
+      type="text"
+      name="successInput"
+      id="successInput"
+      value="{{success_msg}}"
+    />
+  </div>
+
+{{/if}}
+
+{{#if error_msg}}
+
+     <div class="alert alert-danger w-100 font-weight-bold mb-0">{{error_msg}}</div>
+
+{{/if}}
