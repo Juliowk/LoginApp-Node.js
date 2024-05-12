@@ -1,6 +1,8 @@
 <form class="rigth-login" action="/operations/register" method="post">
   <div class="card-login">
-    <h1>Cadastro</h1>
+    <h1 class="mb-2">Cadastro</h1>
+
+    {{>_msg}}
 
     {{#each erros}}
       <div class="textfield">
@@ -31,6 +33,16 @@
         name="password"
         id="password"
         placeholder="Senha"
+      />
+    </div>
+
+    <div class="textfield">
+      <label for="passwordrepeat">Repita a senha:</label>
+      <input
+        type="password"
+        name="passwordrepeat"
+        id="passwordrepeat"
+        placeholder="Repita a senha"
       />
     </div>
 
