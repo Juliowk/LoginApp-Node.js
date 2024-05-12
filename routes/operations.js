@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const passport = require("passport");
 
 const User = require("../models/User");
 
-function validatefields(req) {
+function validatefields_register(req) {
      const erros = [];
      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,6 +24,21 @@ function validatefields(req) {
           }
           if (req.body.passwordrepeat != req.body.password) {
                erros.push({ texto: "As senhas não são iguais!" });
+          }
+     }
+
+     return erros;
+}
+
+function validatefields_login(req) {
+     const erros = [];
+     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+     if (!req.body.email || !req.body.password) {
+          erros.push({ texto: "Campos não informados!" });
+     } else {
+          if (!emailRegex.test(req.body.email)) {
+               erros.push({ texto: "Formato de email inválido!" });
           }
      }
 
@@ -65,7 +81,7 @@ function registerUser(req, res) {
 
 router.post("/register", (req, res) => {
 
-     const erros = validatefields(req);
+     const erros = validatefields_register(req);
 
      if (erros.length > 0) {
           res.render("operationsPage/register", { erros: erros });
@@ -102,8 +118,12 @@ router.post("/register", (req, res) => {
      };
 });
 
-router.post("/login", (req, res) => {
-
+router.post("/login", (req, res, next) => {
+     passport.authenticate("local", {
+          successRedirect: "/",
+          failureRedirect: "/",
+          failureFlash: true
+     })(req, res, next)
 });
 
 router.put("/updateLogin", (req, res) => {

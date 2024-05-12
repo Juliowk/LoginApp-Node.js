@@ -1,12 +1,17 @@
-<form class="rigth-login">
+<form class="rigth-login" method="post" action="/operations/login">
   <div class="card-login">
     <h1>Login</h1>
+
+  {{#if error}}
+    <div class="mt-4 alert alert-danger w-100 font-weight-bold">{{error}}</div>
+  {{else}}
+  {{/if}}
 
     {{>_msg}}
 
     <div class="textfield">
-      <label for="user">Usuário</label>
-      <input type="text" name="user" id="user" placeholder="Usuário" />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Email" />
     </div>
   
     <div class="textfield">
