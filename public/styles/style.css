@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+html, body {
      margin: 0;
      font-family: 'Noto Sans', sans-serif;
+     background-color: #201b2c;
+     overflow: auto; /* Habilita a rolagem */
+     scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+     -ms-overflow-style: none; /* Oculta a barra de rolagem no IE e no Edge */
 }
 
 body * {
@@ -12,7 +16,6 @@ body * {
 .main-login {
      width: 100vw;
      height: 100vh;
-     background-color: #201b2c;
      display: flex;
      justify-content: center;
      align-items: center;
