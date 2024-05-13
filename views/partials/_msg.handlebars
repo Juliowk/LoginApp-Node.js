@@ -1,19 +1,15 @@
 {{#if success_msg}}
 
   <div class="textfield">
-    <input
-      class="successInput"
-      type="text"
-      name="successInput"
-      id="successInput"
-      value="{{success_msg}}"
-    />
+    
+    <div class="successMessage"> <i class="fa-regular fa-circle-check" style="font-size: 18px;"></i> {{success_msg}}</div>
+
   </div>
 
 {{/if}}
 
 {{#if error_msg}}
 
-     <div class="alert alert-danger w-100 font-weight-bold mb-0">{{error_msg}}</div>
+     <div class="alert alert-danger w-100 font-weight-bold mb-0"> <i class="fa-solid fa-triangle-exclamation" style="font-size: 18px;"></i> {{error_msg}}</div>
 
 {{/if}}

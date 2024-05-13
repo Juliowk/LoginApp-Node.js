@@ -1,27 +1,33 @@
-<form class="rigth-login" method="post" action="/operations/login">
-  <div class="card-login">
-    <h1>Login</h1>
-
-  {{#if error}}
-    <div class="mt-4 alert alert-danger w-100 font-weight-bold">{{error}}</div>
-  {{else}}
-  {{/if}}
-
-    {{>_msg}}
-
-    <div class="textfield">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" placeholder="Email" />
-    </div>
-  
-    <div class="textfield">
-      <label for="password">Senha</label>
-      <input type="password" name="password" id="password" placeholder="Senha" />
-    </div>
-  
-    <button type="submit" class="btn-login">Login</button>
-  
-    <a href="/register"><p>Novo por aqui? Cadastre-se!</p></a>
-  
+<div class="main-login">
+  <div class="left-login">
+    <img src="/images/mobile-login-animate.svg" class="left-login-img" alt="" />
   </div>
-</form>
+
+  <form class="rigth-login" method="post" action="/operations/login">
+    <div class="card-login">
+      <h1>Login</h1>
+
+      {{#if error}}
+        <div class="mt-4 alert alert-danger w-100 font-weight-bold"> <i class="fa-solid fa-triangle-exclamation" style="font-size: 18px;"></i> {{error}}</div>
+      {{/if}}
+
+      {{>_msg}}
+
+      <div class="textfield">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" />
+      </div>
+    
+      <div class="textfield">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" placeholder="Senha" />
+      </div>
+    
+      <button type="submit" class="btn-login">Login</button>
+    
+      <a href="/register"><p>Novo por aqui? Cadastre-se!</p></a>
+
+    </div>
+  </form>
+
+</div>

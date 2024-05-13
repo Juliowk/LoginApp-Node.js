@@ -1,53 +1,60 @@
-<form class="rigth-login" action="/operations/register" method="post">
-  <div class="card-login">
-    <h1 class="mb-2">Cadastro</h1>
+<div class="main-login">
+  <div class="left-login">
+    <img src="/images/mobile-login-animate (1).svg" class="left-login-img" alt="" />
+  </div>
 
-    {{>_msg}}
+  <form class="rigth-login" action="/operations/register" method="post">
+    <div class="card-login">
+      <h1 class="mb-2">Cadastro</h1>
 
-    {{#each erros}}
+      {{>_msg}}
+
+      {{#each erros}}
+        <div class="textfield">
+          <div class="alert alert-danger w-100 font-weight-bold mb-0"> <i class="fa-solid fa-triangle-exclamation" style="font-size: 18px;"></i> {{texto}}</div>
+        </div>
+
+      {{/each}}
+
       <div class="textfield">
-        <div class="alert alert-danger w-100 font-weight-bold mb-0">{{texto}}</div>
+        <label for="user">Usuário</label>
+        <input type="text" name="user" id="user" placeholder="Usuário" />
       </div>
 
-    {{/each}}
+      <div class="textfield">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="seuemail@gmail.com"
+        />
+      </div>
 
-    <div class="textfield">
-      <label for="user">Usuário</label>
-      <input type="text" name="user" id="user" placeholder="Usuário" />
+      <div class="textfield">
+        <label for="password">Senha</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Senha"
+        />
+      </div>
+
+      <div class="textfield">
+        <label for="passwordrepeat">Repita a senha:</label>
+        <input
+          type="password"
+          name="passwordrepeat"
+          id="passwordrepeat"
+          placeholder="Repita a senha"
+        />
+      </div>
+
+      <button type="submit" class="btn-login">Cadastrar</button>
+
+      <a href="/"><p>Já possui registro? Faça Login!</p></a>
     </div>
+  </form>  
 
-    <div class="textfield">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="seuemail@gmail.com"
-      />
-    </div>
-
-    <div class="textfield">
-      <label for="password">Senha</label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Senha"
-      />
-    </div>
-
-    <div class="textfield">
-      <label for="passwordrepeat">Repita a senha:</label>
-      <input
-        type="password"
-        name="passwordrepeat"
-        id="passwordrepeat"
-        placeholder="Repita a senha"
-      />
-    </div>
-
-    <button type="submit" class="btn-login">Cadastrar</button>
-
-    <a href="/"><p>Já possui registro? Faça Login!</p></a>
-  </div>
-</form>
+</div>
