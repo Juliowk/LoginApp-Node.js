@@ -30,21 +30,6 @@ function validatefields_register(req) {
      return erros;
 }
 
-function validatefields_login(req) {
-     const erros = [];
-     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-     if (!req.body.email || !req.body.password) {
-          erros.push({ texto: "Campos não informados!" });
-     } else {
-          if (!emailRegex.test(req.body.email)) {
-               erros.push({ texto: "Formato de email inválido!" });
-          }
-     }
-
-     return erros;
-}
-
 function registerUser(req, res) {
      const newUser = {
           user: req.body.user,
@@ -124,14 +109,6 @@ router.post("/login", (req, res, next) => {
           failureRedirect: "/",
           failureFlash: true
      })(req, res, next)
-});
-
-router.put("/updateLogin", (req, res) => {
-
-});
-
-router.delete("/deleteLogin", (req, res) => {
-
 });
 
 module.exports = router;

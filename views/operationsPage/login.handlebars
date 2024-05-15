@@ -5,10 +5,10 @@
 
   <form class="rigth-login" method="post" action="/operations/login">
     <div class="card-login">
-      <h1>Login</h1>
+      <h1 class="mb-4">Login</h1>
 
       {{#if error}}
-        <div class="mt-4 alert alert-danger w-100 font-weight-bold"> <i class="fa-solid fa-triangle-exclamation" style="font-size: 18px;"></i> {{error}}</div>
+        <div class="alert alert-danger w-100 font-weight-bold"> <i class="fa-solid fa-triangle-exclamation" style="font-size: 18px;"></i> {{error}}</div>
       {{/if}}
 
       {{>_msg}}

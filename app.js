@@ -12,6 +12,8 @@ const moment = require('moment');
 const passport = require("passport");
 require("./config/auth")(passport);
 
+const { areAdm } = require("./helpers/areAdm");
+
 const app = express();
 const PORT = 8081;
 
@@ -55,6 +57,7 @@ app.use((req, res, next) => {
      res.locals.success_msg = req.flash("success_msg");
      res.locals.error_msg = req.flash("error_msg");
      res.locals.error = req.flash("error");
+     res.locals.user = req.user || null;
      next();
 });
 
@@ -66,9 +69,9 @@ app.get("/register", (req, res) => {
      res.render("operationsPage/register");
 });
 
-app.get("/users", (req, res) => {
+app.get("/users", areAdm, (req, res) => {
      User.find()
-          .sort({date: -1})
+          .sort({ date: -1 })
           .then((usuarios) => {
                usuarios = usuarios.map(usuario => {
                     return {
