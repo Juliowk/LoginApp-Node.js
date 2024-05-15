@@ -33,4 +33,4 @@ Rota: ("/users")
 
 Essas páginas representam a interface do usuário para as funcionalidades de login, registro e exibição de usuários cadastrados, respectivamente. Cada rota corresponde a uma funcionalidade específica da aplicação.
 
-### Por: Júlio Elias de Sousa Rocha - `https://github.com/Juliowk`
+Este projeto foi desenvolvido por [Júlio Elias de Sousa Rocha](https://github.com/Juliowk).
